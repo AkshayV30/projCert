@@ -1,5 +1,7 @@
 
-FROM devopsedu/webapp
+FROM devopsedu/webapp:latest
+RUN sudo apt-get update
+RUN sudo apt-get upgrade
 ADD target/phpweb-0.0.1-SNAPSHOT.jar	/usr/local/tomcat/webapps
 EXPOSE 8080
 RUN rm /var/www/html/index.html
