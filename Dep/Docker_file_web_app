@@ -1,6 +1,6 @@
 
 FROM devopsedu/webapp
-ADD website /var/www/html
+ADD target/phpweb-0.0.1-SNAPSHOT.jar	/usr/local/tomcat/webapps
 EXPOSE 8080
 RUN rm /var/www/html/index.html
 CMD apachectl -D FOREGROUND
