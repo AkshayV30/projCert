@@ -1,7 +1,7 @@
 
 FROM devopsedu/webapp:latest
-
-ADD /website/	/var/www/html/
 RUN rm /var/www/html/index.html
+ADD /website/	/var/www/html/
+
 CMD apachectl -D FOREGROUND
 
