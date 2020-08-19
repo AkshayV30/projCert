@@ -1,6 +1,8 @@
+FROM devopsedu/webapp:latest
 FROM tomcat
+RUN add-apt-repository ppa:openjdk-r/ppa
 RUN apt-get -y update 
-RUN apt-get -y install openjdk-8-jdk wget
+RUN apt-get install -y openjdk-8-jdk
 RUN mkdir /opt/tomcat
 COPY tomcat-8.5.37.tar.gz /tmp
 RUN mv /tmp/apache-tomcat-8.5.37/* /opt/tomcat/
