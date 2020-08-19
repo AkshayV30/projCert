@@ -18,4 +18,4 @@
     - name: increase replicas 
       command: kubectl scale deploy eduphpapp --replicas=2
     - name: deploy service
-      command: kubectl expose deploy eduphpapp --name eduphpapp-svc --port 7070 --type NodePort
+      command: kubectl expose deploy eduphpapp --name eduphpapp-svc --port 3001 --type NodePort
