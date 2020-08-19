@@ -1,11 +1,4 @@
 FROM devopsedu/webapp:latest
-FROM tomcat
-RUN add-apt-repository ppa:openjdk-r/ppa
-RUN apt-get -y update 
-RUN apt-get install -y openjdk-8-jdk
-RUN mkdir /opt/tomcat
-COPY tomcat-8.5.37.tar.gz /tmp
-RUN mv /tmp/apache-tomcat-8.5.37/* /opt/tomcat/
-COPY phpwebap.war /opt/tomcat/webapps
-EXPOSE 8080
-ENTRYPOINT ["/opt/tomcat/bin/catalina.sh", "run"]  ## JSON Format
+CMD apachectl -D FOREGROUND
+RUN rm var/www/html/index.html
+ADD website /var/www/html/
