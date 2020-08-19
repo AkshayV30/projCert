@@ -16,6 +16,6 @@
     - name: deploy app
       command: kubectl create deploy eduphpapp --image=webhostatwork/projectcert_devops:{{ build }}
     - name: increase replicas 
-      command: kubectl scale deploy eduphpapp --replicas=2
+      command: kubectl scale deploy eduphpapp --replicas=1
     - name: deploy service
       command: kubectl expose deploy eduphpapp --name eduphpapp-svc --port 8080 --type NodePort
